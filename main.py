@@ -6,7 +6,7 @@ import datetime
 
 def case(var, defult=None, dic=None, **kw):
     if not dic is None:
-        if str(type(dic)) == "<class 'dict'>":
+        if type(dic) == dict:
             vars = dic.keys()
             if var in vars:
                 dic[var]()

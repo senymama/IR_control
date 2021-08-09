@@ -114,7 +114,7 @@ modes = [
         'POWER': lambda x='POWER': ir_print(x),
         'BGM': lambda x='BGM': ir_print(x),
         'MUTE': lambda x='media_volume_mute': push(x),
-        'PHOTO': lambda: push('tt'),
+        'PHOTO': lambda: push('t'),
         'MUSIC': lambda x='MUSIC': ir_print(x),
         'MOVIE': lambda: push('f'),
         'Play/pause': lambda: push('media_play_pause'),

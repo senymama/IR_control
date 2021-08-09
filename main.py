@@ -4,22 +4,24 @@ import time
 import datetime
 
 
-def case(var, defult=None, dic=None, **kw):
-    if not dic is None:
-        if type(dic) == dict:
-            vars = dic.keys()
-            if var in vars:
-                dic[var]()
-            else:
-                if not defult is None:
-                    defult()
-    else:
-        vars = kw.keys()
-        if var in vars:
-            kw[var]()
+def do_nothing():
+    pass
+
+
+def case(key, default=do_nothing, dic=None, **kw):
+    if dic is None:
+        keys = kw.keys()
+        if key in keys:
+            kw[key]()
         else:
-            if not defult is None:
-                defult()
+            default()
+        return None
+    keys = dic.keys()
+    if key in keys:
+        dic[key]()
+    else:
+        if not default is None:
+            default()
 
 
 def my_print(dic: dict):
@@ -63,7 +65,7 @@ while True:
                 if int(in_data) == i['key']:
                     if i['name'] == 'ROTATE':
                         mode += 1
-                        if mode > len(key_control.modes_list)-1:
+                        if mode > len(key_control.modes_list) - 1:
                             mode = 0
                         print(f'set mode {key_control.modes_list[mode]}')
                     else:

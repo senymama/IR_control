@@ -5,7 +5,7 @@
 (указан в коде т.к. не планируется отключать плату от компьютера)
 
 To use it in your conditions, you need to write to the ir_keys array from key_control.py
-codes of all your keys and their names (you can do without it).
+codes of all your keys, and their names (you can do without it).
 Make functions for each button in each mode (the mode toggle button is configurable in main.py).
 Next, when you run main.py, it will connect to the specified port
 (specified in the code because it is not planned to disconnect the board from the computer)
